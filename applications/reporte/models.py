@@ -1,4 +1,5 @@
 from django.db import models
+from .managers import ReporteManager
 
 # Create your models here.
 class Reporte(models.Model):
@@ -12,6 +13,8 @@ class Reporte(models.Model):
         verbose_name = "Reporte"
         verbose_name_plural = "Reportes"
         db_table = "reporte"
+
+    objects = ReporteManager()
 
     def __str__(self):
         return f"{self.tema} - {self.dia}:{self.hora}"
